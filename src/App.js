@@ -3,30 +3,23 @@ import Home from './components/Home';
 import Hello from './components/Hello';
 import About from './components/About';
 import Contact from './components/Contact';
+import Route from './components/Route'
 
 const App = () => {
-    const showHome = () => {
-        if(window.location.pathname === '/') return <Home />
-    }
-
-    const showHello = () => {
-        if(window.location.pathname === '/hello') return <Hello />
-    }
-
-    const showAbout = () => {
-        if(window.location.pathname === '/about') return <About />
-    }
-
-    const showContact = () => {
-        if(window.location.pathname === '/contact') return <Contact />
-    }
-
     return (
         <div>
-            {showHome()}
-            {showHello()}
-            {showAbout()}
-            {showContact()}
+            <Route path="/">
+                <Home />
+            </Route>
+            <Route path="/hello">
+                <Hello />
+            </Route>
+            <Route path="/about">
+                <About />
+            </Route>
+            <Route path="/contact">
+                <Contact />
+            </Route>
         </div>
     )
 }
